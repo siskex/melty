@@ -1,0 +1,264 @@
+{
+ "sheet": "recipe",
+ "about": "The install recipe, one row per recipe key. 'remix' is what tools/build.py writes to build/recipe.json; 'original' is the original v0.1.5 recipe for comparison.",
+ "version": "0.2.0",
+ "columns": [
+  "key",
+  "original",
+  "remix",
+  "changed",
+  "why"
+ ],
+ "rows": [
+  {
+   "key": "schemaVersion",
+   "original": 1,
+   "remix": 1,
+   "changed": false,
+   "why": "unchanged"
+  },
+  {
+   "key": "mode",
+   "original": "installed",
+   "remix": "installed",
+   "changed": false,
+   "why": "unchanged"
+  },
+  {
+   "key": "games",
+   "original": [
+    {
+     "role": "primary",
+     "slug": "gta-v",
+     "version": "=1.0.3889.0"
+    },
+    {
+     "role": "companion",
+     "slug": "minecraft-java"
+    }
+   ],
+   "remix": [
+    {
+     "role": "primary",
+     "slug": "gta-v",
+     "version": "=1.0.3889.0"
+    },
+    {
+     "role": "companion",
+     "slug": "minecraft-java"
+    }
+   ],
+   "changed": false,
+   "why": "Still pinned to GTA V Legacy 1.0.3889.0: Script Hook V 3889.0 only runs on that build."
+  },
+  {
+   "key": "components",
+   "original": [
+    {
+     "id": "main",
+     "kind": "main",
+     "label": "Minecraft x GTA V",
+     "fileName": "MCPassthrough-0.1.5.zip",
+     "required": true
+    },
+    {
+     "id": "minecraft",
+     "kind": "extra",
+     "label": "Its Minecraft",
+     "fileName": "MCPassthrough-Minecraft-0.1.0.zip",
+     "required": true
+    }
+   ],
+   "remix": [
+    {
+     "id": "main",
+     "kind": "main",
+     "label": "Minecraft x GTA V: Clean Install",
+     "fileName": "MCPassthrough-Clean-0.2.0.zip",
+     "required": true
+    },
+    {
+     "id": "minecraft",
+     "kind": "extra",
+     "label": "Its Minecraft",
+     "fileName": "MCPassthrough-Clean-Minecraft-0.2.0.zip",
+     "required": true
+    }
+   ],
+   "changed": true,
+   "why": "New file names for this remix's packages (built by tools/build.py from sheets/files.json)."
+  },
+  {
+   "key": "requirements",
+   "original": [],
+   "remix": [
+    {
+     "kind": "loader",
+     "id": "ultimate-asi-loader"
+    }
+   ],
+   "changed": true,
+   "why": "Melty installs and manages Ultimate ASI Loader; it replaces the dinput8.dll the original shipped, and loads MCPassthrough.asi and ReShade64.asi from GTA's folder the same way."
+  },
+  {
+   "key": "mappings",
+   "original": [
+    {
+     "to": "{game}",
+     "from": "gta/",
+     "component": "main"
+    },
+    {
+     "to": "{localappdata}/MCPassthrough/credits",
+     "from": "credits/",
+     "component": "main"
+    },
+    {
+     "to": "{localappdata}/MCPassthrough",
+     "from": "",
+     "component": "minecraft"
+    }
+   ],
+   "remix": [
+    {
+     "to": "{game}",
+     "from": "gta/",
+     "component": "main"
+    },
+    {
+     "to": "{localappdata}/MCPassthrough/credits",
+     "from": "credits/",
+     "component": "main"
+    },
+    {
+     "to": "{localappdata}/MCPassthrough",
+     "from": "",
+     "component": "minecraft"
+    }
+   ],
+   "changed": false,
+   "why": "Same folders as the original: gta/ into GTA's folder, credits and Minecraft under {localappdata}/MCPassthrough."
+  },
+  {
+   "key": "launch",
+   "original": {
+    "kind": "game"
+   },
+   "remix": {
+    "kind": "game",
+    "args": [
+     "-nobattleye",
+     "-noBE"
+    ]
+   },
+   "changed": true,
+   "why": "The arguments the original wrote into args.txt (BattlEye off, so Script Hook V runs) are passed by Melty only when it starts GTA for this mashup, so nothing in GTA's folder turns BattlEye off for other launches."
+  },
+  {
+   "key": "setup",
+   "original": {
+    "done": {
+     "file": "{localappdata}/MCPassthrough/Prism/instances/MCPassthrough/.minecraft/logs/latest.log",
+     "contains": "Backend library:"
+    },
+    "label": "Minecraft",
+    "launch": {
+     "args": [
+      "--launch",
+      "MCPassthrough"
+     ],
+     "kind": "exe",
+     "path": "{localappdata}/MCPassthrough/Prism/prismlauncher.exe"
+    },
+    "stopWhenDone": true
+   },
+   "remix": {
+    "done": {
+     "file": "{localappdata}/MCPassthrough/Prism/instances/MCPassthrough/.minecraft/logs/latest.log",
+     "contains": "Backend library:"
+    },
+    "label": "Minecraft",
+    "launch": {
+     "args": [
+      "--launch",
+      "MCPassthrough"
+     ],
+     "kind": "exe",
+     "path": "{localappdata}/MCPassthrough/Prism/prismlauncher.exe"
+    },
+    "stopWhenDone": true
+   },
+   "changed": false,
+   "why": "unchanged: Prism signs in and installs Minecraft 26.3 + Fabric once before the first start"
+  },
+  {
+   "key": "together",
+   "original": [
+    {
+     "launch": {
+      "args": [
+       "--launch",
+       "MCPassthrough"
+      ],
+      "kind": "exe",
+      "path": "{localappdata}/MCPassthrough/Prism/prismlauncher.exe"
+     },
+     "startFirst": true,
+     "waitSeconds": 20
+    }
+   ],
+   "remix": [
+    {
+     "launch": {
+      "args": [
+       "--launch",
+       "MCPassthrough"
+      ],
+      "kind": "exe",
+      "path": "{localappdata}/MCPassthrough/Prism/prismlauncher.exe"
+     },
+     "startFirst": true,
+     "waitSeconds": 20
+    }
+   ],
+   "changed": false,
+   "why": "unchanged: Minecraft starts first, 20 s before GTA"
+  },
+  {
+   "key": "settings",
+   "original": [
+    {
+     "set": {
+      "DoF": "false",
+      "Windowed": "2",
+      "PauseOnFocusLoss": "0"
+     },
+     "file": "{documents}/Rockstar Games/GTA V/settings.xml"
+    }
+   ],
+   "remix": [
+    {
+     "set": {
+      "DoF": "false",
+      "Windowed": "2",
+      "PauseOnFocusLoss": "0"
+     },
+     "file": "{documents}/Rockstar Games/GTA V/settings.xml"
+    }
+   ],
+   "changed": false,
+   "why": "unchanged: borderless window and no pause on focus loss, which the two-window setup needs"
+  },
+  {
+   "key": "runtimeData",
+   "original": [
+    "{localappdata}/MCPassthrough"
+   ],
+   "remix": [
+    "{localappdata}/MCPassthrough"
+   ],
+   "changed": false,
+   "why": "unchanged"
+  }
+ ]
+}

@@ -1,0 +1,36 @@
+Minecraft x GTA V: Clean Install, on Melty
+A remix of "Minecraft x GTA V" by Melty (https://melty.gg/m/minecraft-x-gta-v), v0.1.5. The game is the same;
+only how it installs changed:
+- No dinput8.dll of its own: Melty installs and manages Ultimate ASI Loader, which loads MCPassthrough.asi and
+  ReShade64.asi.
+- No args.txt in GTA V's folder: BattlEye is turned off (-nobattleye -noBE) only when Melty starts GTA V for this
+  mashup, so other launches of GTA V are left alone.
+- A smaller Minecraft bundle: Prism Launcher's self-updater and four unused image plugins are left out.
+Story mode only.
+
+The original's credits follow, unchanged.
+
+Minecraft x GTA V (MCPassthrough), on Melty
+
+Made by Rehan (rehan-remade): https://github.com/rehan-remade/universal-modder/tree/main/examples/minecraft-gta5-passthrough
+(commit 15d6f9d), MIT license (universal-modder-LICENSE.txt). Built from that source: MCPassthrough.asi with Visual
+Studio Build Tools 2026, and the Fabric mod passthrough-0.1.0.jar with JDK 25. Not affiliated with Rockstar Games,
+Take-Two Interactive, Mojang or Microsoft. It contains no game files.
+
+Changes from that commit, for Melty:
+- During a story mission the plugin steps aside, so the mission plays as plain GTA (its weapons, aiming, hints and
+  police) and can be finished; Steve comes back in free roam when it ends. A new game opens with two missions (the
+  Prologue, then Franklin and Lamar), so Steve first shows after those.
+- When GTA directs the scene (a cutscene, a scripted camera, no player control, a fade, a character switch), GTA's
+  own character acts it and Minecraft isn't drawn over it; Steve comes back with the player's control.
+- GTA's player is hidden again whenever GTA has shown them, and a character left behind after a switch shows again.
+
+Included with credit:
+- Script Hook V 3889.0 and its ASI loader (dinput8.dll) by Alexander Blade, https://www.dev-c.com/gtav/scripthookv/,
+  included with permission.
+- ReShade 6.8.0 with add-on support by crosire (Patrick Mours), https://reshade.me, BSD 3-Clause license
+  (ReShade-LICENSE.md). Installed as ReShade64.asi so the ASI loader starts it.
+- ReShade.fxh and ReShadeUI.fxh from crosire/reshade-shaders, CC0-1.0.
+- Minecraft's side: Prism Launcher (GPL-3.0), Fabric Loader 0.19.5 and Fabric API 0.161.0+26.3 (Apache-2.0).
+
+Story mode only: args.txt starts GTA V without BattlEye, so GTA Online isn't available while it is installed.

@@ -1,0 +1,656 @@
+{
+ "sheet": "files",
+ "about": "Every file of the original's two packages. One row = one file. keep=false drops it from the remix; changed=true means the remix ships its own version (from /credits). The build copies kept rows byte for byte and checks size and sha256.",
+ "columns": [
+  "path",
+  "component",
+  "size",
+  "sha256",
+  "keep",
+  "why",
+  "license",
+  "changed"
+ ],
+ "rows": [
+  {
+   "path": "credits/CREDITS.txt",
+   "component": "main",
+   "size": 1813,
+   "sha256": "9b6c402426f6c635e011beaf5ad167be3eea3445843852a28b7934095febb5e9",
+   "keep": true,
+   "why": "credits",
+   "license": "MIT (universal-modder)",
+   "changed": true
+  },
+  {
+   "path": "credits/ReShade-LICENSE.md",
+   "component": "main",
+   "size": 1481,
+   "sha256": "237ded5b8344f820113efab1e65e91e1f159d9202c5b4856606a0590d3ffdab0",
+   "keep": true,
+   "why": "ReShade license",
+   "license": "MIT (universal-modder)",
+   "changed": false
+  },
+  {
+   "path": "credits/universal-modder-LICENSE.txt",
+   "component": "main",
+   "size": 1096,
+   "sha256": "db6cfa2ad2c44f73080440c866c4a3a078749d84ba40b4dfa27d50f18a525543",
+   "keep": true,
+   "why": "universal-modder MIT license",
+   "license": "MIT (universal-modder)",
+   "changed": false
+  },
+  {
+   "path": "gta/MCPassthrough.asi",
+   "component": "main",
+   "size": 355840,
+   "sha256": "8b5a5c9a0dd55b9f059286dc9c8a8b963a008cfc74f501a2153037f3be8fbb20",
+   "keep": true,
+   "why": "the GTA plugin (Script Hook V script + ReShade add-on), built from universal-modder 15d6f9d",
+   "license": "MIT (universal-modder)",
+   "changed": false
+  },
+  {
+   "path": "gta/ReShade.ini",
+   "component": "main",
+   "size": 399,
+   "sha256": "53f1f2a06a4162b151505c432dbcda90b15d361896a41aab9b7fd06753e0394e",
+   "keep": true,
+   "why": "ReShade settings: shader paths and GTA's depth format",
+   "license": "MIT (universal-modder)",
+   "changed": false
+  },
+  {
+   "path": "gta/ReShade64.asi",
+   "component": "main",
+   "size": 5592064,
+   "sha256": "0cee63f9c9f13f3ac909c5b4903f4dbb4b719a7ab3b4f13b0deaf83c814b94f7",
+   "keep": true,
+   "why": "ReShade 6.8.0 with add-on support, loaded by the ASI loader; draws Minecraft into GTA's frame",
+   "license": "ReShade, BSD-3-Clause",
+   "changed": false
+  },
+  {
+   "path": "gta/ReShadePreset.ini",
+   "component": "main",
+   "size": 92,
+   "sha256": "5eef6bfad216f3d0e92df08ac4137944d8db8fac4228ee955bf66518cb3f85c1",
+   "keep": true,
+   "why": "turns on the MCPassthrough effect",
+   "license": "MIT (universal-modder)",
+   "changed": false
+  },
+  {
+   "path": "gta/ScriptHookV.dll",
+   "component": "main",
+   "size": 1987072,
+   "sha256": "126be57ca9dca00e471f9de611766009c900aad88f89ae6c2926ec62e5aaeb4f",
+   "keep": true,
+   "why": "Script Hook V 3889.0: lets MCPassthrough.asi call GTA's natives; MCPassthrough.asi imports it, so it sits next to GTA5.exe",
+   "license": "Script Hook V, Alexander Blade; included with permission (as in the original)",
+   "changed": false
+  },
+  {
+   "path": "gta/args.txt",
+   "component": "main",
+   "size": 17,
+   "sha256": "0e08ca288106ada67ac9fee4cf146cd7f7dad40c9cc2c29390541a4993b19332",
+   "keep": false,
+   "why": "Turned BattlEye off on every GTA start, from any launcher, for as long as it stayed in the folder. Replaced by launch.args, which only apply when Melty starts GTA for this mashup.",
+   "license": "MIT (universal-modder)",
+   "changed": false
+  },
+  {
+   "path": "gta/dinput8.dll",
+   "component": "main",
+   "size": 131072,
+   "sha256": "9fd9e02353b7d39fe07b9667f7ea2697229a7f2d0e7d389eb79eb212b1bb181d",
+   "keep": false,
+   "why": "Script Hook V's own ASI loader. Melty installs Ultimate ASI Loader (requirements) and manages it, so this mashup no longer puts a second dinput8.dll into GTA's folder.",
+   "license": "MIT (universal-modder)",
+   "changed": false
+  },
+  {
+   "path": "gta/reshade-shaders/Shaders/MCPassthrough.fx",
+   "component": "main",
+   "size": 17625,
+   "sha256": "c63ccbbbb7ff3b684f46b83ec83f74c5e5ca71e7161f83ade0c74593f7263c88",
+   "keep": true,
+   "why": "the compositing effect",
+   "license": "MIT (universal-modder)",
+   "changed": false
+  },
+  {
+   "path": "gta/reshade-shaders/Shaders/ReShade.fxh",
+   "component": "main",
+   "size": 4250,
+   "sha256": "6dabfbbaf968c3871905d2ea17f96572ff7b1cec01310b5d0e5252b66b30174f",
+   "keep": true,
+   "why": "ReShade shader header",
+   "license": "crosire/reshade-shaders, CC0-1.0",
+   "changed": false
+  },
+  {
+   "path": "gta/reshade-shaders/Shaders/ReShadeUI.fxh",
+   "component": "main",
+   "size": 9930,
+   "sha256": "78adf672df47460297eb9fe6dd238d2aafa24510b52b84feb1a745dff70eb901",
+   "keep": true,
+   "why": "ReShade shader header",
+   "license": "crosire/reshade-shaders, CC0-1.0",
+   "changed": false
+  },
+  {
+   "path": "Prism/LICENSE-PrismLauncher.txt",
+   "component": "minecraft",
+   "size": 35149,
+   "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): LICENSE-PrismLauncher.txt",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/Qt6Core.dll",
+   "component": "minecraft",
+   "size": 10245904,
+   "sha256": "eb0ecdcefd37974a30d0b70d7f0f7d35419eb820ff2d7cef3720d00e084531cb",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): Qt6Core.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/Qt6Gui.dll",
+   "component": "minecraft",
+   "size": 9498384,
+   "sha256": "78ba25d8d68936f4d45de779e41685d891f829cd05b6f84342845cd606bec3d9",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): Qt6Gui.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/Qt6Network.dll",
+   "component": "minecraft",
+   "size": 1770256,
+   "sha256": "9920f5fc17a19f5ba28dc780cba5cb8956994ed7a37f92690f7ffd844e568fcc",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): Qt6Network.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/Qt6NetworkAuth.dll",
+   "component": "minecraft",
+   "size": 296208,
+   "sha256": "116f20f77ca4e8a5a946c3d5b723915625ef7877ef043edc8619bfd4b7d79d3f",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): Qt6NetworkAuth.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/Qt6OpenGL.dll",
+   "component": "minecraft",
+   "size": 1980688,
+   "sha256": "5e7f2223d327776e13d08e6390d97b951d9e7d2354aa295cea88a489aa112d8c",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): Qt6OpenGL.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/Qt6Svg.dll",
+   "component": "minecraft",
+   "size": 635664,
+   "sha256": "dc79df244469f8e4b0dbed80653cb2826285c35a6bca2f61712205035ba8e764",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): Qt6Svg.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/Qt6Widgets.dll",
+   "component": "minecraft",
+   "size": 6580496,
+   "sha256": "57ed72df2efbc87a5dbaceadeea38d0fe31d4a77925dcb3faa48441025957cc9",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): Qt6Widgets.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/Qt6Xml.dll",
+   "component": "minecraft",
+   "size": 163600,
+   "sha256": "6bbc1330afab946dcf3bf6a64f8b43e29531d5202d263cfe5fe8f23b02c6c25e",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): Qt6Xml.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/THIRD-PARTY.txt",
+   "component": "minecraft",
+   "size": 863,
+   "sha256": "39bda308104982fd2c67b775bc19a80697011c833db29ece5c1085cb7f8e6469",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): THIRD-PARTY.txt",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/archive.dll",
+   "component": "minecraft",
+   "size": 748816,
+   "sha256": "dea602df2fb4a3cc8a7cfc5f28c8c0e98e7b39f195ce874a9028d2ccdb3c140d",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): archive.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/bz2.dll",
+   "component": "minecraft",
+   "size": 92432,
+   "sha256": "9d50a4fb8034e0a8c8c19afdb1aa11f3b987c9f725e678a68eebd9beae41f32b",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): bz2.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/cmark.dll",
+   "component": "minecraft",
+   "size": 159504,
+   "sha256": "dab8255ff7ed3b0a60997c387db622d175fcffbe76d8a879be1fb4737ca2d77e",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): cmark.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/iconengines/qsvgicon.dll",
+   "component": "minecraft",
+   "size": 75024,
+   "sha256": "e2fb48c9b5c01f78056af06fb0c918bc4db125a7473fc9b781a8b3188ed37fff",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): iconengines/qsvgicon.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/icuuc.dll",
+   "component": "minecraft",
+   "size": 52496,
+   "sha256": "80c67e2e8363374b461506f15c690043c71ec72d0be0eadcf486fe3432362975",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): icuuc.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/imageformats/qgif.dll",
+   "component": "minecraft",
+   "size": 51472,
+   "sha256": "38f3e8517a8d8b9beabb848b269caf34d0193732c7640b389123239479804938",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): imageformats/qgif.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/imageformats/qicns.dll",
+   "component": "minecraft",
+   "size": 59664,
+   "sha256": "17308d8875c160a74be59c9e12e44a795cdb107c67133b681b3d3f5b3178930a",
+   "keep": false,
+   "why": "macOS .icns icons: not used on Windows.",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/imageformats/qico.dll",
+   "component": "minecraft",
+   "size": 49424,
+   "sha256": "25b899a62e8e5985c64c72f2748afc51ec5170ad3ff5f3930fca743ba1e4d478",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): imageformats/qico.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/imageformats/qjpeg.dll",
+   "component": "minecraft",
+   "size": 581392,
+   "sha256": "f6f0f3c3b3c2c56a2a0e7aed7291c8ec94c8c8fd5dda3e42f394fba9dd5f6211",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): imageformats/qjpeg.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/imageformats/qsvg.dll",
+   "component": "minecraft",
+   "size": 42768,
+   "sha256": "0e89ffbc34b023abacde13f264b95e30d24ee1682fe2a1b7f92449d6c0af9e63",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): imageformats/qsvg.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/imageformats/qtga.dll",
+   "component": "minecraft",
+   "size": 41744,
+   "sha256": "2ef495e8e5ed48b1e8d1fb00bcf53a5cb28df2a47f5fd4f98d6eb30c9a885c34",
+   "keep": false,
+   "why": "TGA images: Prism shows none.",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/imageformats/qtiff.dll",
+   "component": "minecraft",
+   "size": 445200,
+   "sha256": "6bd65c310ccf02f989a8a224cefd1b36b69c2c4ac33620d961d83a1f3648801c",
+   "keep": false,
+   "why": "TIFF images: Prism shows none.",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/imageformats/qwbmp.dll",
+   "component": "minecraft",
+   "size": 40208,
+   "sha256": "99f1ec657d6312140fa9f1e5e4029ffbf1e36b5aa5691698c6fad649c3947540",
+   "keep": false,
+   "why": "WAP bitmaps: Prism shows none.",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/imageformats/qwebp.dll",
+   "component": "minecraft",
+   "size": 566032,
+   "sha256": "09e759dbcd9b08d86d18506f41282f64086c3bcbfecec2959f3700cc257e803c",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): imageformats/qwebp.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/instances/MCPassthrough/.minecraft/mods/fabric-api-0.161.0+26.3.jar",
+   "component": "minecraft",
+   "size": 2620967,
+   "sha256": "86f16178a3cecc887a85a4cfe9a79d92fa7341d8f39b5951a4d6ad800ab657a6",
+   "keep": true,
+   "why": "Fabric API, needed by the Fabric mod",
+   "license": "Fabric API, Apache-2.0",
+   "changed": false
+  },
+  {
+   "path": "Prism/instances/MCPassthrough/.minecraft/mods/passthrough-0.1.0.jar",
+   "component": "minecraft",
+   "size": 207643,
+   "sha256": "0f879781e01997f7174957b23f2842283fd40bcf7ca7115cd8652aabe8190914",
+   "keep": true,
+   "why": "the Fabric mod (Minecraft side)",
+   "license": "MIT (universal-modder)",
+   "changed": false
+  },
+  {
+   "path": "Prism/instances/MCPassthrough/instance.cfg",
+   "component": "minecraft",
+   "size": 331,
+   "sha256": "d351cc89703215a800da3885ae4703a52cfe4745169cacf0bab130e54a08c17c",
+   "keep": true,
+   "why": "the instance's Java and memory settings",
+   "license": "MIT (universal-modder)",
+   "changed": false
+  },
+  {
+   "path": "Prism/instances/MCPassthrough/mmc-pack.json",
+   "component": "minecraft",
+   "size": 1388,
+   "sha256": "e620147081aa6d382bce51ac7244a1d387b618f4f9a8a698633950b7a729a50c",
+   "keep": true,
+   "why": "names Minecraft 26.3 + Fabric Loader 0.19.5; Prism installs them on first start",
+   "license": "MIT (universal-modder)",
+   "changed": false
+  },
+  {
+   "path": "Prism/jars/JavaCheck.jar",
+   "component": "minecraft",
+   "size": 1119,
+   "sha256": "47d06ad6390cbf21fdd5fa163e49b7a9b6562dfbdd51dc637178f9e3748c0dcc",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): jars/JavaCheck.jar",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/jars/NewLaunch.jar",
+   "component": "minecraft",
+   "size": 14011,
+   "sha256": "f292d43848e7aa09963dff0946cd1e0edbd778a6a0aa759bf4b387749a631712",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): jars/NewLaunch.jar",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/jars/NewLaunchLegacy.jar",
+   "component": "minecraft",
+   "size": 23603,
+   "sha256": "234b2bc3144092b4ab54b55f6310d47f1f461422b24c6fa0fb742aa49c9efb12",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): jars/NewLaunchLegacy.jar",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/liblzma.dll",
+   "component": "minecraft",
+   "size": 204560,
+   "sha256": "7c10e3f609e3d8cf747d0579eea89dfe0557696553239587bf3b9fcc4ca30bc2",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): liblzma.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/lz4.dll",
+   "component": "minecraft",
+   "size": 142096,
+   "sha256": "cf4b519968d4483ec7fb7ff6c29d866712100df652224345e19f80f51b0ee553",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): lz4.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/lzo2.dll",
+   "component": "minecraft",
+   "size": 130832,
+   "sha256": "4fe450d8bac240cfcdf8a848a0487c2838bd114090ed6a21c9035d70cd0330ae",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): lzo2.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/manifest.txt",
+   "component": "minecraft",
+   "size": 828,
+   "sha256": "a91e021557780d18d2806c021d2d0ce2b92cb49ccba728515ed8163ef2aeaecd",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): manifest.txt",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/platforms/qwindows.dll",
+   "component": "minecraft",
+   "size": 1001232,
+   "sha256": "b1f060ddac4a71da8d61fa47752d1543d0ec8e30f1af2fdcff3145bd6d87424e",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): platforms/qwindows.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/portable.txt",
+   "component": "minecraft",
+   "size": 301,
+   "sha256": "45ca04cb1257c60794bcd17341b5ec8c5a0cb18571f0d2e7fafee951b6bc476e",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): portable.txt",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/prismlauncher.cfg",
+   "component": "minecraft",
+   "size": 291,
+   "sha256": "f3c2611f670becb6a438a95b8265f5d6f8dcd0ae798e1a66451d681c3978e9c3",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): prismlauncher.cfg",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/prismlauncher.exe",
+   "component": "minecraft",
+   "size": 9660688,
+   "sha256": "19ad665668ca6c80aa5368573dd8f61cfce2a483ce9d5a6cccd7802c221d36a0",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): prismlauncher.exe",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/prismlauncher_filelink.exe",
+   "component": "minecraft",
+   "size": 109840,
+   "sha256": "0fa411c57dbaa1c4652feccb9a72d2a4e598a5a39b16b8d827e4807a7447ba5f",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): prismlauncher_filelink.exe",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/prismlauncher_updater.exe",
+   "component": "minecraft",
+   "size": 421136,
+   "sha256": "c5a0a742f18667804471a9893a53d2f0ffaec4c9384b02b8c60ef8f100e27b91",
+   "keep": false,
+   "why": "Prism's self-updater. Melty manages this Prism; without the updater Prism doesn't offer to update itself over Melty's copy.",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/qrencode.dll",
+   "component": "minecraft",
+   "size": 63760,
+   "sha256": "47fdc6d98c5f14082196e49aa9398a552e5baab969ced8ecdc298f1827ca217c",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): qrencode.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/qt.conf",
+   "component": "minecraft",
+   "size": 1,
+   "sha256": "36a9e7f1c95b82ffb99743e0c5c4ce95d83c9a430aac59f84ef3cbfab6145068",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): qt.conf",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/qtlogging.ini",
+   "component": "minecraft",
+   "size": 609,
+   "sha256": "64e1b2dbf14930ad0fc05cd756654aeb9126e61a87a45ce862b49457691c2a64",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): qtlogging.ini",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/styles/qmodernwindowsstyle.dll",
+   "component": "minecraft",
+   "size": 224528,
+   "sha256": "6398e7a925274b4f3b78df961d474cef3535fd8edb8a43026f3567d9d32e08f9",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): styles/qmodernwindowsstyle.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/tls/qcertonlybackend.dll",
+   "component": "minecraft",
+   "size": 106768,
+   "sha256": "6b2119acd72c9907e2b37586b005434d44a4503d44554a475fdfae69729abc18",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): tls/qcertonlybackend.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/tls/qschannelbackend.dll",
+   "component": "minecraft",
+   "size": 266512,
+   "sha256": "119752d050c4437a46db55fe6d82b8dae1d623395925ec53cbff5acc56788619",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): tls/qschannelbackend.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/tomlplusplus-3.dll",
+   "component": "minecraft",
+   "size": 400656,
+   "sha256": "ce1b7713b2f47100629cb009a52abf634b8378fa9472628757120d579fd0216f",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): tomlplusplus-3.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/zlib1.dll",
+   "component": "minecraft",
+   "size": 105744,
+   "sha256": "c7085a66b3c6161e7fcc40198e7ae595e417719989b902dba3165c47ec3fe67b",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): zlib1.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "Prism/zstd.dll",
+   "component": "minecraft",
+   "size": 673552,
+   "sha256": "c4bbac91813e0bccc878c148501f6a7f00f1374e53d561b5ad65d5092bb54a67",
+   "keep": true,
+   "why": "Prism Launcher 11.1.1 (portable): zstd.dll",
+   "license": "Prism Launcher, GPL-3.0 (Qt LGPL-3.0)",
+   "changed": false
+  },
+  {
+   "path": "bundle-version.txt",
+   "component": "minecraft",
+   "size": 95,
+   "sha256": "3d2b7d826cc88898de092ad973eb38200228d3738365be35b95e781e03bf9865",
+   "keep": true,
+   "why": "what this Minecraft bundle contains",
+   "license": "MIT (universal-modder)",
+   "changed": false
+  }
+ ]
+}
